@@ -12,7 +12,7 @@ namespace NewsTD.Pages
     {
         private readonly IHttpClientFactory _clientFactory;
         private readonly ILogger<IndexModel> _logger;
-        ArticleDbContext _articleDbContext;
+        private readonly ArticleDbContext _articleDbContext;
 
         public List<Article> Articles { get; set; }
         public string zeroRecordsMessage { get; set; }
