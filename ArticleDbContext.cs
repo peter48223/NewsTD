@@ -4,6 +4,11 @@ namespace NewsTD
 {
     public class ArticleDbContext : DbContext
     {
+        public ArticleDbContext()
+        {
+
+        }
+
         public ArticleDbContext(DbContextOptions<ArticleDbContext> options) : base(options)
         {
 
