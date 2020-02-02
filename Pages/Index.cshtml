@@ -1,0 +1,50 @@
+﻿@page
+@model NewsTD.Pages.IndexModel
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search</h1>
+
+@Model.zeroRecordsMessage
+
+@using (Html.BeginForm(FormMethod.Post, new { autocomplete = "off" }))
+{
+    <div>
+        <select name="country">
+            <option value="us" selected>United States</option>
+            <option value="gb">Great Britain</option>
+            <option value="ca">Canada</option>
+        </select>
+    </div>
+    <div>
+        @Html.TextBox("searchFor")
+    </div>
+    <input type="submit" value="Search" />
+}
+
+@if (Model.Articles.Count > 0)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var article in Model.Articles)
+            {
+                <tr>
+
+                    <td>
+                        <a href="Article?Id=@article.Id">@article.Title</a>
+                    </td>
+                    <td>@article.Author</td>
+                    <td>@article.Source.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

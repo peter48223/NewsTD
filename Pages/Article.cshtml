@@ -1,0 +1,15 @@
+﻿@page
+@model NewsTD.Pages.ArticleModel
+@{
+    ViewData["Title"] = "Article: " + @Model.Article.Title;
+}
+
+<h1>Article</h1>
+
+<h3>@Model.Article.Title</h3>
+
+<div>@Model.Article.Content</div>
+
+<div><b>Source: </b>@Model.Article.Source.Name</div>
+
+
